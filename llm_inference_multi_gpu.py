@@ -25,10 +25,10 @@ def load_csv(path, yield_size=10000):
         contexts.append(context)
         ccifs.append(ccif)
     
-    if size % yield_size == 0:
-        yield ccifs, contexts
-        contexts = []
-        ccifs = []
+        if size % yield_size == 0:
+            yield ccifs, contexts
+            contexts = []
+            ccifs = []
     
     if len(ccifs) > 0:
         yield ccifs, contexts
